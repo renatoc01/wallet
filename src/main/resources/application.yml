@@ -1,0 +1,14 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: wallet
+  profiles:
+    active: dev
+  datasource:
+    platform: mysql
+    initialization-mode: always
+    hibernate:
+      ddl-auto: update
+      show-sql: true
