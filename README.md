@@ -3,7 +3,13 @@ Wallet Service Assignment
 
 # Instructions on how to install, test, and run the service.
 
-At the root of the code, I pushed the docker-compose.yml and you just need to execute the command.
+First of all, at the root of the code, you need to execute the command to generate the image. (You need to have maven installed on the computer with environment variable setted)
+
+```sh
+mvn clean install
+```
+
+I pushed the docker-compose.yml and you just need to execute the command.
 (You need to have the Docker installed on the computer)
 
 ```sh
