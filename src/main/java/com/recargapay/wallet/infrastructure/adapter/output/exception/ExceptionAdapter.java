@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.recargapay.wallet.domain.exception.DepositException;
 import com.recargapay.wallet.domain.exception.WalletNotFoundException;
+import com.recargapay.wallet.infrastructure.adapter.input.rest.util.ErrorMessage;
 import com.recargapay.wallet.infrastructure.adapter.output.exception.response.ExceptionResponse;
 
 import jakarta.validation.ConstraintViolationException;
@@ -20,7 +21,7 @@ public class ExceptionAdapter {
 	@ExceptionHandler(ConstraintViolationException.class)
 	public final ResponseEntity<ExceptionResponse> handleConstraintViolationException(ConstraintViolationException ex) {
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-				.body(new ExceptionResponse(LocalDateTime.now(), ex.getMessage()));
+				.body(new ExceptionResponse(LocalDateTime.now(), ErrorMessage.INVALID_UUID.getValue()));
 	}
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
